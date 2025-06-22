@@ -1,4 +1,3 @@
-# xss_module.py
 from utils import encoder
 from utils import obfuscator
 
@@ -43,10 +42,14 @@ class XSSPayloadGenerator:
     }
 
     def generate(self, type = "reflected", encode = None, obfuscate = False):
-        if type not in self.payloads:
+        if type not in ["reflected", "stored", "dom", "evasion", "all"]:
             raise ValueError("Invalid payload type")
         
-        base_payloads = self.payloads[type]
+        if type == "all":
+            base_payloads = self.payloads["reflected"] + self.payloads["stored"] + self.payloads["dom"] + self.payloads["evasion"]
+        else:
+            base_payloads = self.payloads[type]
+        processed = []
 
         processed = []
 
