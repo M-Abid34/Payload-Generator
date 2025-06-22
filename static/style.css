@@ -76,10 +76,10 @@ button:hover {
 }
 
 .checkbox-group {
-    display: flex;
+    display: block;
     align-items: center;
-    gap: 10px;
     color: #f1f5f9;
+    margin: auto;
 }
 
 footer {
