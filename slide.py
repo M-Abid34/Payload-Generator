@@ -6,7 +6,7 @@ import pyperclip
 
 def main():
     parser = argparse.ArgumentParser(description="Modular Payload Generator Tool")
-    parser.add_argument('--xss', action='store_true')
+    parser.add_argument('--xss', choices=["reflected", "stored", "Dom"], help="Generate XSS Payloads")
     parser.add_argument('--sqli', choices=['error', 'union', 'blind'], help='Type of SQL injection payload to generate')
     parser.add_argument('--cmdi', action='store_true')
     parser.add_argument('--encode', choices=['base64', 'url', 'hex', 'unicode'])
@@ -17,8 +17,15 @@ def main():
     args = parser.parse_args()
     payloads = []
 
-    if args.xss:
-        payloads += xss.generate_payloads()
+    if args.xss: 
+        xss_gen = xss.XSSPayloadGenerator()
+        xss_payloads = xss_gen.generate(args.xss, args.encode, args.obfuscate)
+        payloads += xss_payloads
+
+        if args.appendfile:
+            with open('xss_payload.txt','a') as f:
+                for p in payloads:
+                    f.write(p + '\n')
 
     if args.sqli == 'error':
         raw_payloads = sqli.error_based_sqli()
