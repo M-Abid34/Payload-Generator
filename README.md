@@ -70,7 +70,22 @@ Example Usage is for CLI:
 For use in GUI
 
             pip install flask
+<<<<<<< HEAD
             python3 app.py run
+=======
+            python3 app.py  run
 
 
 and that is all.
+Example of CLI OUTPUT:
+![image](https://github.com/user-attachments/assets/63abea89-62d7-4d36-af98-edc3d9f9b671)
+
+
+
+
+Example of GUI:
+
+![Screenshot 2025-06-26 115331](https://github.com/user-attachments/assets/48e346a8-131f-4592-b808-bcd0d50a2408)
+>>>>>>> 43a9962a73ad678793d6ff5c7437c4d40e36d4ce
+
+
