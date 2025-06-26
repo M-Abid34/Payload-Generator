@@ -64,12 +64,13 @@ How to use :
 
 Example Usage is for CLI:
 
-    python3 slide.py --xss=reflected --append --encode=base64 --obfuscate
+            python3 slide.py --xss=reflected --append --encode=base64 --obfuscate
 
 
 For use in GUI
-        pip install flask
-        python3 run app.py
+
+            pip install flask
+            python3 run app.py
 
 
 and that is all.
