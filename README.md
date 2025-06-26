@@ -75,9 +75,13 @@ For use in GUI
 
 and that is all.
 Example of CLI OUTPUT:
-![Screenshot 2025-06-26 115249](https://github.com/user-attachments/assets/b26699a3-4490-41b0-b61c-68ec92366900)
+![image](https://github.com/user-attachments/assets/63abea89-62d7-4d36-af98-edc3d9f9b671)
+![image](https://github.com/user-attachments/assets/63abea89-62d7-4d36-af98-edc3d9f9b671)
+
+
 
 Example of GUI:
+
 ![Screenshot 2025-06-26 115331](https://github.com/user-attachments/assets/48e346a8-131f-4592-b808-bcd0d50a2408)
 
 
