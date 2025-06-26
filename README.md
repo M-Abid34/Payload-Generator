@@ -76,7 +76,7 @@ For use in GUI
 and that is all.
 Example of CLI OUTPUT:
 ![image](https://github.com/user-attachments/assets/63abea89-62d7-4d36-af98-edc3d9f9b671)
-![image](https://github.com/user-attachments/assets/63abea89-62d7-4d36-af98-edc3d9f9b671)
+
 
 
 
