@@ -70,7 +70,7 @@ Example Usage is for CLI:
 For use in GUI
 
             pip install flask
-            python3 run app.py
+            python3 app.py run
 
 
 and that is all.
