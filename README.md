@@ -63,6 +63,7 @@ How to use :
 
 
 Example Usage is for CLI:
+
     python3 slide.py --xss=reflected --append --encode=base64 --obfuscate
 
 
